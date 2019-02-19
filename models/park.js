@@ -22,5 +22,9 @@ Park.prototype.mostVisited = function() {
   return sortedDinosaurs.pop();
 };
 
+//Based on https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+Park.prototype.findSpecies = function(species) {
+  return this.dinosaurs.filter(dinosaur => dinosaur.species === species);
+};
 
 module.exports = Park;

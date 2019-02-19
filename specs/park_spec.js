@@ -57,7 +57,17 @@ describe('Park', function() {
   });
 
 
-  it('should be able to find all dinosaurs of a particular species');
+  it('should be able to find all dinosaurs of a particular species', function() {
+    park.dinosaurs.push(dinosaur4);
+    park.dinosaurs.push(dinosaur4);
+    park.dinosaurs.push(dinosaur4);
+
+    foundDinos = [dinosaur4, dinosaur4, dinosaur4];
+
+
+    actual = park.findSpecies('brachiosaurus');
+    assert.deepStrictEqual(actual, foundDinos);
+  });
 
   it('should be able to remove all dinosaurs of a particular species');
 
