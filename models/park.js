@@ -16,4 +16,11 @@ Park.prototype.removeDinosaur = function(rmDinosaur) {
   };
 }
 
+//Based on https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+Park.prototype.mostVisited = function() {
+  let sortedDinosaurs = this.dinosaurs.sort((a, b) => a.guestsAttractedPerDay - b.guestsAttractedPerDay);
+  return sortedDinosaurs.pop();
+};
+
+
 module.exports = Park;
