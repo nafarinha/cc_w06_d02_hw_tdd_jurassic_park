@@ -27,4 +27,30 @@ Park.prototype.findSpecies = function(species) {
   return this.dinosaurs.filter(dinosaur => dinosaur.species === species);
 };
 
+Park.prototype.totalVisitorsDay = function() {
+  let totalVisitors = 0;
+  for (let i = 0; i < this.dinosaurs.length; i++) {
+    totalVisitors += this.dinosaurs[i].guestsAttractedPerDay;
+  };
+  return totalVisitors;
+};
+
+Park.prototype.totalVisitorsYear = function(year) {
+  let dailyVisitors = 0;
+  let totalDaysInYear = 0;
+
+  for (let i = 0; i < this.dinosaurs.length; i++) {
+    dailyVisitors += this.dinosaurs[i].guestsAttractedPerDay;
+  };
+
+  //Based on JS code available at https://www.w3resource.com/javascript-exercises/javascript-date-exercise-14.php
+  if (year % 400 === 0 || (year % 100 !== 0 && year % 4 === 0)) {
+    totalDaysInYear = 366;
+  } else {
+    totalDaysInYear = 365;
+  }
+  return dailyVisitors * totalDaysInYear;
+};
+
+
 module.exports = Park;
