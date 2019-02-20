@@ -78,6 +78,22 @@ describe('Park', function() {
     assert.strictEqual(actual, (366 * 115));
   });
 
-  xit('should be able to remove all dinosaurs of a particular species');
+  it('should be able to calculate the total revenue from ticket sales for one year', function() {
+    const actual = park.annualTicketRevenue(2019);
+    assert.strictEqual(actual, 365 * 115 * 500);
+  });
+
+  xit('should be able to remove all dinosaurs of a particular species', function() {
+
+    park.removeSpecies('gallimimus');
+    const actual = park.dinosaurs.length;
+    assert.strictEqual(actual, 2);
+  });
+
+  xit('should be able to show the number of dinosaurs with each diet type', function() {
+    const actual = console.log(park.dietTypeTotals);
+    assert.strictEqual(actual, { 'carnivore': 1, 'herbivore': 2, 'omnivore': 0 });
+
+  });
 
 });

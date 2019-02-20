@@ -53,4 +53,32 @@ Park.prototype.totalVisitorsYear = function(year) {
 };
 
 
+Park.prototype.annualTicketRevenue = function(year) {
+  let visitorsYear = this.totalVisitorsYear(year);
+  return this.ticketPrice * visitorsYear;
+};
+
+Park.prototype.removeSpecies = function(species) {
+  //nothing
+};
+
+Park.prototype.dietTypeTotals = function() {
+  const result = {
+    carnivore: 0,
+    herbivore: 0,
+    omnivore: 0
+  };
+
+  for (let i = 0; i < this.dinosaurs.length; i++) {
+    if (this.dinosaurs[i].diet === 'carnivore') {
+      result.carnivore += 1;
+    } if (this.dinosaurs[i].diet === 'herbivore') {
+      result.herbivore += 1;
+    } if (this.dinosaurs[i].diet === 'omnivore') {
+      result.omnivore += 1;
+    }
+  }
+  return result;
+};
+
 module.exports = Park;
