@@ -83,7 +83,7 @@ describe('Park', function() {
     assert.strictEqual(actual, 365 * 115 * 500);
   });
 
-  xit('should be able to remove all dinosaurs of a particular species', function() {
+  it('should be able to remove all dinosaurs of a particular species', function() {
 
     park.removeSpecies('gallimimus');
     const actual = park.dinosaurs.length;

@@ -58,8 +58,10 @@ Park.prototype.annualTicketRevenue = function(year) {
   return this.ticketPrice * visitorsYear;
 };
 
+//Code partially based on https://stackoverflow.com/a/33034768/5621295
 Park.prototype.removeSpecies = function(species) {
-  //nothing
+  let unwantedDinosaurs = this.findSpecies(species);
+  this.dinosaurs = this.dinosaurs.filter(dinosaur => !unwantedDinosaurs.includes(dinosaur));
 };
 
 Park.prototype.dietTypeTotals = function() {
