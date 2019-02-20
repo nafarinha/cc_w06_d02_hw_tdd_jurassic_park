@@ -90,9 +90,9 @@ describe('Park', function() {
     assert.strictEqual(actual, 2);
   });
 
-  xit('should be able to show the number of dinosaurs with each diet type', function() {
-    const actual = console.log(park.dietTypeTotals);
-    assert.strictEqual(actual, { 'carnivore': 1, 'herbivore': 2, 'omnivore': 0 });
+  it('should be able to show the number of dinosaurs with each diet type', function() {
+    const actual = park.dietTypeTotals();
+    assert.deepStrictEqual(actual, { 'carnivore': 1, 'herbivore': 2, 'omnivore': 0 });
 
   });
 
